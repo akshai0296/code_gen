@@ -1,24 +1,50 @@
+#coder_debugger
 coder_debugger/
 │
-├─ src/                  # all importable Python packages
-│   ├─ generator/
-│   ├─ executor/
-│   ├─ debugger/
-│   └─ coordinator/
+├── src/                           # All core source code
+│   ├── generator/                 # Code generation logic (e.g., prompt formatting, sampling)
+│   │   └── generator.py
+│   │
+│   ├── executor/                  # Runtime execution module
+│   │   └── executor.py
+│   │
+│   ├── debugger/                  # Self-debugging and repair logic
+│   │   └── debugger.py
+│   │
+│   ├── coordinator/               # Orchestrates full pipeline (gen → exec → debug)
+│   │   └── pipeline.py
+│   │
+│   └── __init__.py                # Makes the code importable
 │
-├─ benchmarks/           # DebugBench subset, eval scripts, result JSON
-├─ notebooks/            # exploratory Colab / Jupyter demos
-├─ scripts/              # CLI entry-points, data/download helpers
-├─ models/               # empty; checkpoints tracked via Git LFS
-├─ docs/                 # MkDocs or Sphinx sources (optional now)
-├─ paper/                # final PDF + conference poster
+├── scripts/                       # Standalone runnable scripts
+│   ├── run_pipeline.py            # End-to-end run (single example)
+│   ├── batch_eval.py              # Evaluate over DebugBench or MBPP
+│   └── train_lora.py              # PEFT (LoRA) fine-tuning script
 │
-├─ requirements.txt
-├─ environment.yml       # conda alternative (cuda, bitsandbytes, etc.)
-├─ README.md
-├─ CONTRIBUTING.md
-├─ .gitignore
-└─ .gitattributes        # enable Git LFS for *.bin, *.safetensors
+├── benchmarks/                    # DebugBench test set + evaluation outputs
+│   ├── debugbench.jsonl           # Eval data
+│   ├── results/                   # Output from model runs
+│   └── metrics/                   # Accuracy, pass@1, etc.
+│
+├── notebooks/                     # Jupyter/Colab demo notebooks
+│   └── demo_pipeline.ipynb
+│
+├── models/                        # (Optional) Store trained model checkpoints (via Git LFS)
+│   └── lora_adapter.bin
+│
+├── paper/                         # Final PDF, poster, bibtex
+│   └── CodeGen_Debugger_Paper.pdf
+│
+├── tests/                         # Minimal unit tests for each module
+│   ├── test_generator.py
+│   ├── test_executor.py
+│   └── test_debugger.py
+│
+├── requirements.txt              # Python dependencies
+├── environment.yml               # Conda environment (optional)
+├── .gitignore
+├── .gitattributes                # For Git LFS
+├── README.md                     # Overview, usage, citation
+└── LICENSE
 
-# code_gen
 Pipeline + QLoRA fine-tuned model that generates, executes, and self-debugs code in Python/Java/C++
