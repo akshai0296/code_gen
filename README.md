@@ -1,7 +1,7 @@
 ```text
 coder_debugger/
 │
-├── src/                      # All core source code
+├── Code Generation and Debugger/                      # All core source code
 │   ├── generator/            # Code generation logic (e.g., prompt formatting, sampling)
 │   │   └── generator.py
 │   ├── executor/             # Runtime execution module
@@ -17,7 +17,6 @@ coder_debugger/
 │   └── train_lora.py         # PEFT (LoRA) fine-tuning script
 │
 ├── benchmarks/               # DebugBench test set + evaluation outputs
-│   ├── debugbench.jsonl      # Eval data
 │   ├── results/              # Output from model runs
 │   └── metrics/              # Accuracy, pass@1, etc.
 ```
