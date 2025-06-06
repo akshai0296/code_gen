@@ -1,2 +1,2 @@
 # code_gen
-Fine-tuning Salesforce's CodeGen model on the MBPP dataset using Hugging Face Transformers for Python code generation tasks.
+Pipeline + QLoRA fine-tuned model that generates, executes, and self-debugs code in Python/Java/C++
