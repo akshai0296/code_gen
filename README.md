@@ -10,7 +10,6 @@ coder_debugger/
 │   │   └── debugger.py
 │   ├── coordinator/          # Orchestrates full pipeline (gen → exec → debug)
 │   │   └── pipeline.py
-│   └── __init__.py           # Makes the code importable
 │
 ├── scripts/                  # Standalone runnable scripts
 │   ├── run_pipeline.py       # End-to-end run (single example)
@@ -21,10 +20,6 @@ coder_debugger/
 │   ├── debugbench.jsonl      # Eval data
 │   ├── results/              # Output from model runs
 │   └── metrics/              # Accuracy, pass@1, etc.
-│
-├── notebooks/                # Colab/Jupyter demos
-│   └── demo_pipeline.ipynb
-└── .gitattributes            # Git LFS tracking
 ```
 
 Pipeline + QLoRA fine-tuned model that generates, executes, and self-debugs code in Python/Java/C++
