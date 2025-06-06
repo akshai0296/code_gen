@@ -22,4 +22,4 @@ coder_debugger/
 │   └── metrics/              # Accuracy, pass@1, etc.
 ```
 
-Pipeline + QLoRA fine-tuned model that generates, executes, and self-debugs code in Python/Java/C++
+> ⚙️ **Pipeline + QLoRA fine-tuned model** that generates, executes, and self-debug Python/Java/C++ code using LLMs.
